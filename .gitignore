@@ -22,6 +22,7 @@ app/resource/test_audio
 download
 
 # 忽略测试文件
+test
 test.py
 demo.py
 
