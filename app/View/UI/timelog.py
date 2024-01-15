@@ -14,12 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_TimeLog(object):
     def setupUi(self, TimeLog):
         TimeLog.setObjectName("TimeLog")
-        TimeLog.resize(1024, 775)
+        TimeLog.resize(1024, 736)
         TimeLog.setMinimumSize(QtCore.QSize(1024, 0))
         TimeLog.setStyleSheet("")
         self.horizontalLayout = QtWidgets.QHBoxLayout(TimeLog)
-        self.horizontalLayout.setContentsMargins(18, 18, 18, 18)
-        self.horizontalLayout.setSpacing(2)
+        self.horizontalLayout.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout.setSpacing(1)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame = QtWidgets.QFrame(TimeLog)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -28,7 +28,7 @@ class Ui_TimeLog(object):
         sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy)
         self.frame.setMaximumSize(QtCore.QSize(304, 16777215))
-        self.frame.setStyleSheet("background-color: rgb(248, 248, 248);")
+        self.frame.setStyleSheet("")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -65,6 +65,7 @@ class Ui_TimeLog(object):
 "    padding-left: 4px;\n"
 "    padding-right: 4px;\n"
 "    background-color: rgb(249, 249, 249);\n"
+"    background-color: rgba(255, 255, 255, 1);\n"
 "}\n"
 "\n"
 "ListView::item,\n"
@@ -165,6 +166,9 @@ class Ui_TimeLog(object):
 "    padding-left: 4px;\n"
 "    padding-right: 4px;\n"
 "    background-color: rgb(249, 249, 249);\n"
+"    background-color: rgba(255, 255, 255, 1);\n"
+"\n"
+"\n"
 "}\n"
 "\n"
 "ListView::item,\n"
@@ -269,13 +273,18 @@ class Ui_TimeLog(object):
         self.gridLayout.addWidget(self.BodyLabel_2, 0, 1, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
         self.horizontalLayout.addWidget(self.frame)
+        self.line = QtWidgets.QFrame(TimeLog)
+        self.line.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.line.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line.setObjectName("line")
+        self.horizontalLayout.addWidget(self.line)
         self.frame_2 = QtWidgets.QFrame(TimeLog)
-        self.frame_2.setStyleSheet("background-color: rgb(248, 248, 248);")
+        self.frame_2.setStyleSheet("")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame_2)
-        self.verticalLayout_8.setSpacing(18)
+        self.verticalLayout_8.setSpacing(12)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.frame_5 = QtWidgets.QFrame(self.frame_2)
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -293,7 +302,7 @@ class Ui_TimeLog(object):
         self.SubtitleLabel_2.setObjectName("SubtitleLabel_2")
         self.verticalLayout_4.addWidget(self.SubtitleLabel_2)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_3.setSpacing(15)
+        self.verticalLayout_3.setSpacing(12)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -491,6 +500,7 @@ class Ui_TimeLog(object):
         self.buttonGroup.addButton(self.PillPushButton)
         self.gridLayout_2.addWidget(self.PillPushButton, 0, 0, 1, 1)
         self.PillPushButton_2 = PillPushButton(self.frame_6)
+        self.PillPushButton_2.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -615,8 +625,13 @@ class Ui_TimeLog(object):
         self.verticalLayout_8.addWidget(self.frame_6)
         self.verticalLayout_8.setStretch(1, 1)
         self.horizontalLayout.addWidget(self.frame_2)
+        self.line_2 = QtWidgets.QFrame(TimeLog)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_2.setObjectName("line_2")
+        self.horizontalLayout.addWidget(self.line_2)
         self.frame_3 = QtWidgets.QFrame(TimeLog)
-        self.frame_3.setStyleSheet("background-color: rgb(248, 248, 248);")
+        self.frame_3.setStyleSheet("")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -628,8 +643,8 @@ class Ui_TimeLog(object):
         self.PrimaryPushButton_2.setObjectName("PrimaryPushButton_2")
         self.horizontalLayout.addWidget(self.frame_3)
         self.horizontalLayout.setStretch(0, 1)
-        self.horizontalLayout.setStretch(1, 1)
         self.horizontalLayout.setStretch(2, 1)
+        self.horizontalLayout.setStretch(4, 1)
 
         self.retranslateUi(TimeLog)
         QtCore.QMetaObject.connectSlotsByName(TimeLog)
@@ -644,22 +659,22 @@ class Ui_TimeLog(object):
         self.SubtitleLabel_2.setText(_translate("TimeLog", "当前任务信息"))
         self.label_4.setText(_translate("TimeLog", "项目名称"))
         self.label_5.setText(_translate("TimeLog", "｜"))
-        self.info_projectname_label.setText(_translate("TimeLog", "RPM08"))
+        self.info_projectname_label.setText(_translate("TimeLog", "   "))
         self.label_7.setText(_translate("TimeLog", "任务名称"))
         self.label_8.setText(_translate("TimeLog", "｜"))
-        self.info_taskname_label.setText(_translate("TimeLog", "SC001/shot001/Animation"))
+        self.info_taskname_label.setText(_translate("TimeLog", "  "))
         self.label_10.setText(_translate("TimeLog", "任务状态"))
         self.label_11.setText(_translate("TimeLog", "｜"))
-        self.info_taskstatu_label.setText(_translate("TimeLog", "Approve"))
+        self.info_taskstatu_label.setText(_translate("TimeLog", "  "))
         self.label_13.setText(_translate("TimeLog", "预计工时"))
         self.label_14.setText(_translate("TimeLog", "｜"))
-        self.info_expectedtime_label.setText(_translate("TimeLog", "50.0h"))
+        self.info_expectedtime_label.setText(_translate("TimeLog", "  "))
         self.label_16.setText(_translate("TimeLog", "已用工时"))
         self.label_17.setText(_translate("TimeLog", "｜"))
-        self.info_usetime_label.setText(_translate("TimeLog", "14.0h"))
+        self.info_usetime_label.setText(_translate("TimeLog", "  "))
         self.label_22.setText(_translate("TimeLog", "剩余工时"))
         self.label_23.setText(_translate("TimeLog", "｜"))
-        self.info_residuetime_label.setText(_translate("TimeLog", "36.0h"))
+        self.info_residuetime_label.setText(_translate("TimeLog", "   "))
         self.SubtitleLabel_3.setText(_translate("TimeLog", "请选择打卡时间"))
         self.StrongBodyLabel.setText(_translate("TimeLog", "工作时间"))
         self.PillPushButton.setText(_translate("TimeLog", "09:30-10:30"))

@@ -1,5 +1,6 @@
 # coding:utf-8
 import sys
+import psutil
 from datetime import datetime
 # sys.path.append(r'c:/CgTeamWork_v7/bin/base')
 import cgtw2
@@ -26,7 +27,7 @@ def get_my_task(db):
     _task_list = []
     for module in _module:
         if module == 'asset':
-            field_sign_list = ['asset.entity', 'task.account', 'task.artist', 'task.entity', 'task.url', 'task.expected_time', 'task.total_use_time']
+            field_sign_list = ['asset.entity', 'task.account', 'task.artist', 'task.entity', 'task.url', 'task.expected_time', 'task.total_use_time', 'task.status']
             # field_sign_list = t_tw.task.fields(db, module)
             filter_list = [['task.account', '=', username]]
             id_list = t_tw.task.get_id(
@@ -35,7 +36,7 @@ def get_my_task(db):
                 db, module, id_list, field_sign_list, limit="5000", order_sign_list=[])
             _task_list.extend(task_list)
         elif module == 'shot':
-            field_sign_list = ['shot.entity', 'task.account', 'task.artist', 'task.entity', 'task.url', 'task.expected_time', 'task.total_use_time']
+            field_sign_list = ['shot.entity', 'task.account', 'task.artist', 'task.entity', 'task.url', 'task.expected_time', 'task.total_use_time', 'task.status']
             # field_sign_list = t_tw.task.fields(db, module)
             filter_list = [['task.account', '=', username]]
             id_list = t_tw.task.get_id(db, module, filter_list, limit="5000", start_num="")
@@ -53,8 +54,15 @@ def get_daily_timelog(_date):
         field_list = ['date', 'tag', 'artist', 'project', 'link_entity']
         # field_list = t_tw.timelog.fields()
         # field_list.extend(['tag'])
-        filter_list = [['account_id', '=', userid], ['date', '=', _date]]
+        filter_list = [['account_id', '=', userid], ['date', 'start', _date]]
+        # filter_list = [['account_id', '=', userid]]
         id_list = t_tw.timelog.get_id(db, filter_list, limit="5000")
-        _time_log.extend(t_tw.timelog.get(
-            db, id_list, field_list, limit="5000", order_list=[]))
+        _time_log.extend(t_tw.timelog.get(db, id_list, field_list, limit="5000", order_list=[]))
     return _time_log
+
+def is_process_running(process_name):
+        # 使用psutil检查进程是否正在运行
+        for process in psutil.process_iter(['pid', 'name']):
+            if process.info['name'] == process_name:
+                return True
+        return False
