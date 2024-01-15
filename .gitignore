@@ -23,6 +23,7 @@ download
 
 # 忽略测试文件
 test/
+tests/*
 test.py
 demo.py
 apitest.py
