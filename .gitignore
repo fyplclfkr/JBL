@@ -25,6 +25,7 @@ download
 test
 test.py
 demo.py
+apitest.py
 
 # 忽略打包文件夹
 dist

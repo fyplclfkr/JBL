@@ -143,6 +143,6 @@ from app.Core import cgtwapi
 #  {'shot.entity': 'Sc01', 'task.account': 'yuping.fan', 'task.artist': '范毓平', 'id': '5E3AB1CD-F678-48B7-E7F1-1D6294B6822A'}]
 
 """获取工时信息"""
-print(cgtwapi.get_daily_timelog('2024-01-14'))
+# print(cgtwapi.get_daily_timelog('2024-01-14'))
 # [{'date': '2024-01-09', 'tag': '16:30-17:30', 'artist': '范毓平', 'project': 'TEST', 'link_entity': 'Sc01/Layout', '#id': 'AA3F3253-C436-C585-F0A2-2F9FF2C0A651'}, 
 #  {'date': '2024-01-09', 'tag': '14:30-15:30', 'artist': '范毓平', 'project': 'TEST', 'link_entity': 'Sc01/Layout', '#id': '7257EC80-715F-6890-5D58-99D858215D3A'}]
