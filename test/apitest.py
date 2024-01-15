@@ -21,7 +21,7 @@ from app.Core import cgtwapi
 #  {'project.entity': 'TEST2', 'project.full_name': 'TEST2', 'project.id': '980DB891-73DD-4205-A396-A4E0782C4E96', 'project.database': 'proj_test2', 'id': '980DB891-73DD-4205-A396-A4E0782C4E96'}]
 
 """获取任务信息"""
-# print(cgtwapi.get_my_task(db='proj_test'))
+print(cgtwapi.get_my_task(db='proj_test'))
 # [{'asset.entity': 'Borrero', 'task.account': 'yuping.fan', 'task.artist': '范毓平', 'id': '4902F7B4-52F8-F6D5-ADA0-314CD416F99E'}, 
 #  {'shot.entity': 'Sc01', 'task.account': 'yuping.fan', 'task.artist': '范毓平', 'id': '5E3AB1CD-F678-48B7-E7F1-1D6294B6822A'}]
 

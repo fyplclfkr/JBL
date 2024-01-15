@@ -27,8 +27,8 @@ class MainWindow(FluentWindow):
         self.addSubInterface(self.timelog_interface, FIF.HISTORY, '工时打卡')
     
     def initWindow(self):
-        self.resize(960, 780)
-        self.setMinimumWidth(760)
+        self.resize(1024, 768)
+        #self.setMinimumWidth(760)
         self.setWindowIcon(QIcon('app/resource/images/logo.png'))
         self.setWindowTitle('嘉伯乐动画')
         

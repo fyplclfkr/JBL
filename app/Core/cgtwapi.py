@@ -26,7 +26,8 @@ def get_my_task(db):
     _task_list = []
     for module in _module:
         if module == 'asset':
-            field_sign_list = ['asset.entity', 'task.account', 'task.artist']
+            field_sign_list = ['asset.entity', 'task.account', 'task.artist', 'task.entity', 'task.url', 'task.expected_time', 'task.total_use_time']
+            # field_sign_list = t_tw.task.fields(db, module)
             filter_list = [['task.account', '=', username]]
             id_list = t_tw.task.get_id(
                 db, module, filter_list, limit="5000", start_num="")
@@ -34,7 +35,8 @@ def get_my_task(db):
                 db, module, id_list, field_sign_list, limit="5000", order_sign_list=[])
             _task_list.extend(task_list)
         elif module == 'shot':
-            field_sign_list = ['shot.entity', 'task.account', 'task.artist']
+            field_sign_list = ['shot.entity', 'task.account', 'task.artist', 'task.entity', 'task.url', 'task.expected_time', 'task.total_use_time']
+            # field_sign_list = t_tw.task.fields(db, module)
             filter_list = [['task.account', '=', username]]
             id_list = t_tw.task.get_id(db, module, filter_list, limit="5000", start_num="")
             task_list = t_tw.task.get(db, module, id_list, field_sign_list, limit="5000", order_sign_list=[])
