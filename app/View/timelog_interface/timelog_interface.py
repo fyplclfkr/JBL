@@ -11,11 +11,17 @@ from PyQt5.QtWidgets import QApplication, QWidget, QListWidgetItem , QAbstractSc
 from ..UI.timelog import Ui_TimeLog
 
 from Core.cgtwapi import get_project, get_my_task, get_daily_timelog
+
 from common.thread.get_projects_thread import GetProjectsThread
 from common.thread.get_tasks_thread import GetTasksThread
+from common.thread.get_daily_timelog_thread import GetDailyTimelogThread
 
-
-PROJECTS = get_project()
+_today = date.today()
+_yesterday = _today - timedelta(days=1)
+_before_yesterday = _today - timedelta(days=2)
+_today = _today.strftime('%Y-%m-%d')
+_yesterday.strftime('%Y-%m-%d')
+_before_yesterday.strftime('%Y-%m-%d')
 
 class TimeLogInterface(QWidget, Ui_TimeLog):
 
@@ -26,14 +32,15 @@ class TimeLogInterface(QWidget, Ui_TimeLog):
         
         self.setupUi(self)
         
-        self.initTimeButton()
         
         self.get_project_thread = GetProjectsThread()
         self.get_project_thread.getProjectFinished.connect(self.initProject)
         self.get_project_thread.start()
         
         self.project_ListWidget.itemClicked.connect(self.get_tasks_thread)
-        self.task_ListWidget.itemClicked.connect(self.initTaskInfo)
+        self.task_ListWidget.itemClicked.connect(self.setTaskInfo)
+        
+        self.get_timelog_thread()
         
         end_time = time.time()  # 记录窗口加载结束时间
         # 输出加载时间
@@ -57,7 +64,7 @@ class TimeLogInterface(QWidget, Ui_TimeLog):
             list_item.setData(Qt.UserRole, task)
             self.task_ListWidget.addItem(list_item)
             
-    def initTaskInfo(self):
+    def setTaskInfo(self):
         self.info_projectname_label.setText(self.project_ListWidget.currentItem().text())
         self.info_taskname_label.setText(self.task_ListWidget.currentItem().data(Qt.UserRole)['task.url'])
         self.info_taskstatu_label.setText(self.task_ListWidget.currentItem().data(Qt.UserRole)['task.status'])
@@ -65,17 +72,8 @@ class TimeLogInterface(QWidget, Ui_TimeLog):
         self.info_usetime_label.setText(self.task_ListWidget.currentItem().data(Qt.UserRole)['task.total_use_time'])
         self.info_residuetime_label.setText('')
         
-    def initTimeButton(self):
-        _today = date.today()
-        _yesterday = _today - timedelta(days=1)
-        _before_yesterday = _today - timedelta(days=2)
-        _today = _today.strftime('%Y-%m-%d')
-        _yesterday.strftime('%Y-%m-%d')
-        _before_yesterday.strftime('%Y-%m-%d')
-        # print(_today)
-        today_timelog = get_daily_timelog(_today)
-        # print(today_timelog)
-        for timelog in today_timelog:
+    def initTimeButton(self,timelog_list):
+        for timelog in timelog_list:
             for button in self.buttonGroup.buttons():
                 if timelog['tag'] == button.text():
                     button.setEnabled(False)
@@ -88,6 +86,14 @@ class TimeLogInterface(QWidget, Ui_TimeLog):
         self.get_tasks_thread.getTaskFinished.connect(self.initTask)
         self.get_tasks_thread.start()
         
+    def get_timelog_thread(self):
+        _data = '2024-01-15'
+        self.get_timelog_thread = GetDailyTimelogThread(_data)
+        self.get_timelog_thread.getTimelogFinished.connect(self.initTimeButton)
+        self.get_timelog_thread.start()
+
+    def set_timelog(self):
+        pass
 
         
     

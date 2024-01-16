@@ -6,6 +6,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget
 
 
+
 class JBL_Updata(QWidget):
 
     def __init__(self):

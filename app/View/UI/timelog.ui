@@ -7,12 +7,12 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>736</height>
+    <height>768</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1024</width>
+    <width>860</width>
     <height>0</height>
    </size>
   </property>
@@ -22,7 +22,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0,1,0,1">
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0">
    <property name="spacing">
     <number>1</number>
    </property>
@@ -40,15 +40,15 @@
    </property>
    <item>
     <widget class="QFrame" name="frame">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>304</width>
+       <width>326</width>
        <height>16777215</height>
       </size>
      </property>
@@ -78,16 +78,49 @@
        <number>9</number>
       </property>
       <item>
-       <widget class="SubtitleLabel" name="SubtitleLabel">
+       <widget class="QFrame" name="frame_8">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="text">
-         <string>选择打卡任务</string>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
         </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="SubtitleLabel" name="SubtitleLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>选择打卡任务</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
@@ -100,12 +133,6 @@
         </property>
         <item row="1" column="1">
          <widget class="ListWidget" name="task_ListWidget">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
           <property name="styleSheet">
            <string notr="true">ListView,
 ListWidget {
@@ -205,12 +232,6 @@ ListWidget::indicator:indeterminate:disabled {
         </item>
         <item row="1" column="0">
          <widget class="ListWidget" name="project_ListWidget">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
           <property name="styleSheet">
            <string notr="true">ListView,
 ListWidget {
@@ -326,6 +347,11 @@ ListWidget::indicator:indeterminate:disabled {
           <property name="sortingEnabled">
            <bool>false</bool>
           </property>
+          <item>
+           <property name="text">
+            <string>新建项目</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item row="0" column="0">
@@ -385,6 +411,12 @@ ListWidget::indicator:indeterminate:disabled {
    </item>
    <item>
     <widget class="Line" name="line">
+     <property name="maximumSize">
+      <size>
+       <width>1</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
@@ -395,6 +427,18 @@ ListWidget::indicator:indeterminate:disabled {
    </item>
    <item>
     <widget class="QFrame" name="frame_2">
+     <property name="minimumSize">
+      <size>
+       <width>272</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>272</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
@@ -490,7 +534,7 @@ ListWidget::indicator:indeterminate:disabled {
                 <string notr="true">color:rgba(51, 51, 51, 0.5)</string>
                </property>
                <property name="text">
-                <string>   </string>
+                <string> </string>
                </property>
               </widget>
              </item>
@@ -539,7 +583,7 @@ ListWidget::indicator:indeterminate:disabled {
                 <string notr="true">color:rgba(51, 51, 51, 0.5)</string>
                </property>
                <property name="text">
-                <string>  </string>
+                <string> </string>
                </property>
               </widget>
              </item>
@@ -588,7 +632,7 @@ ListWidget::indicator:indeterminate:disabled {
                 <string notr="true">color:rgba(51, 51, 51, 0.5)</string>
                </property>
                <property name="text">
-                <string>  </string>
+                <string> </string>
                </property>
               </widget>
              </item>
@@ -637,7 +681,7 @@ ListWidget::indicator:indeterminate:disabled {
                 <string notr="true">color:rgba(51, 51, 51, 0.5)</string>
                </property>
                <property name="text">
-                <string>  </string>
+                <string> </string>
                </property>
               </widget>
              </item>
@@ -686,7 +730,7 @@ ListWidget::indicator:indeterminate:disabled {
                 <string notr="true">color:rgba(51, 51, 51, 0.5)</string>
                </property>
                <property name="text">
-                <string>  </string>
+                <string> </string>
                </property>
               </widget>
              </item>
@@ -735,7 +779,7 @@ ListWidget::indicator:indeterminate:disabled {
                 <string notr="true">color:rgba(51, 51, 51, 0.5)</string>
                </property>
                <property name="text">
-                <string>   </string>
+                <string> </string>
                </property>
               </widget>
              </item>
@@ -773,7 +817,7 @@ ListWidget::indicator:indeterminate:disabled {
          <item>
           <widget class="SubtitleLabel" name="SubtitleLabel_3">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -812,16 +856,13 @@ ListWidget::indicator:indeterminate:disabled {
              <property name="bottomMargin">
               <number>9</number>
              </property>
-             <property name="horizontalSpacing">
-              <number>24</number>
-             </property>
-             <property name="verticalSpacing">
+             <property name="spacing">
               <number>12</number>
              </property>
              <item row="0" column="0">
               <widget class="PillPushButton" name="PillPushButton">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -829,7 +870,7 @@ ListWidget::indicator:indeterminate:disabled {
                <property name="minimumSize">
                 <size>
                  <width>96</width>
-                 <height>32</height>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -846,7 +887,7 @@ ListWidget::indicator:indeterminate:disabled {
                 <bool>true</bool>
                </property>
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -854,7 +895,7 @@ ListWidget::indicator:indeterminate:disabled {
                <property name="minimumSize">
                 <size>
                  <width>96</width>
-                 <height>32</height>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -870,7 +911,7 @@ ListWidget::indicator:indeterminate:disabled {
                <property name="minimumSize">
                 <size>
                  <width>96</width>
-                 <height>32</height>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -886,7 +927,7 @@ ListWidget::indicator:indeterminate:disabled {
                <property name="minimumSize">
                 <size>
                  <width>96</width>
-                 <height>32</height>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -901,8 +942,8 @@ ListWidget::indicator:indeterminate:disabled {
               <widget class="PillPushButton" name="PillPushButton_5">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -917,8 +958,8 @@ ListWidget::indicator:indeterminate:disabled {
               <widget class="PillPushButton" name="PillPushButton_6">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -933,8 +974,8 @@ ListWidget::indicator:indeterminate:disabled {
               <widget class="PillPushButton" name="PillPushButton_7">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -949,8 +990,8 @@ ListWidget::indicator:indeterminate:disabled {
               <widget class="PillPushButton" name="PillPushButton_8">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -994,16 +1035,13 @@ ListWidget::indicator:indeterminate:disabled {
              <property name="bottomMargin">
               <number>9</number>
              </property>
-             <property name="horizontalSpacing">
-              <number>24</number>
-             </property>
-             <property name="verticalSpacing">
+             <property name="spacing">
               <number>12</number>
              </property>
              <item row="0" column="0">
               <widget class="PillPushButton" name="PillPushButton_9">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -1011,7 +1049,7 @@ ListWidget::indicator:indeterminate:disabled {
                <property name="minimumSize">
                 <size>
                  <width>96</width>
-                 <height>32</height>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -1025,7 +1063,7 @@ ListWidget::indicator:indeterminate:disabled {
              <item row="0" column="1">
               <widget class="PillPushButton" name="PillPushButton_10">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -1033,7 +1071,7 @@ ListWidget::indicator:indeterminate:disabled {
                <property name="minimumSize">
                 <size>
                  <width>96</width>
-                 <height>32</height>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -1046,10 +1084,16 @@ ListWidget::indicator:indeterminate:disabled {
              </item>
              <item row="1" column="0">
               <widget class="PillPushButton" name="PillPushButton_11">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -1062,10 +1106,16 @@ ListWidget::indicator:indeterminate:disabled {
              </item>
              <item row="1" column="1">
               <widget class="PillPushButton" name="PillPushButton_12">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -1078,10 +1128,16 @@ ListWidget::indicator:indeterminate:disabled {
              </item>
              <item row="2" column="0">
               <widget class="PillPushButton" name="PillPushButton_13">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -1094,10 +1150,16 @@ ListWidget::indicator:indeterminate:disabled {
              </item>
              <item row="2" column="1">
               <widget class="PillPushButton" name="PillPushButton_14">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>32</height>
+                 <width>96</width>
+                 <height>29</height>
                 </size>
                </property>
                <property name="text">
@@ -1134,19 +1196,6 @@ ListWidget::indicator:indeterminate:disabled {
              <number>0</number>
             </property>
             <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
              <widget class="PrimaryPushButton" name="PrimaryPushButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1174,19 +1223,6 @@ ListWidget::indicator:indeterminate:disabled {
               </property>
              </widget>
             </item>
-            <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
            </layout>
           </widget>
          </item>
@@ -1198,6 +1234,12 @@ ListWidget::indicator:indeterminate:disabled {
    </item>
    <item>
     <widget class="Line" name="line_2">
+     <property name="maximumSize">
+      <size>
+       <width>1</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
@@ -1208,6 +1250,18 @@ ListWidget::indicator:indeterminate:disabled {
    </item>
    <item>
     <widget class="QFrame" name="frame_3">
+     <property name="minimumSize">
+      <size>
+       <width>304</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>304</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
@@ -1217,29 +1271,68 @@ ListWidget::indicator:indeterminate:disabled {
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="SegmentedWidget" name="SegmentedWidget">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>340</y>
-        <width>190</width>
-        <height>33</height>
-       </rect>
+     <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,1">
+      <property name="topMargin">
+       <number>9</number>
       </property>
-     </widget>
-     <widget class="PrimaryPushButton" name="PrimaryPushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>520</y>
-        <width>101</width>
-        <height>32</height>
-       </rect>
+      <property name="rightMargin">
+       <number>9</number>
       </property>
-      <property name="text">
-       <string>Primary push button</string>
-      </property>
-     </widget>
+      <item>
+       <widget class="QFrame" name="frame_7">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="SubtitleLabel" name="SubtitleLabel_4">
+           <property name="text">
+            <string>打卡记录</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../../resource/resource.qrc">:/img/images/working.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="SegmentedWidget" name="SegmentedWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
@@ -1296,7 +1389,9 @@ ListWidget::indicator:indeterminate:disabled {
    <header>qfluentwidgets</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../resource/resource.qrc"/>
+ </resources>
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup"/>

@@ -17,6 +17,12 @@ def is_process_running(process_name):
             if process.info['name'] == process_name:
                 return True
         return False
+    
+def is_cgtw_login():
+    if is_process_running("CgTeamWork.exe"):
+        return True
+    else:
+        return False
 
 #启动CgTeamWork    
 if is_process_running("CgTeamWork.exe"):
