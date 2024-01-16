@@ -33,3 +33,4 @@ dist
 build
 *.spec
 docs/build
+nuitka-crash-report.xml
