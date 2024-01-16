@@ -24,6 +24,10 @@ download
 # 忽略测试文件
 tests/*.py
 
+# 忽略工具文件夹
+tools
+venv
+
 # 忽略打包文件夹
 dist
 build

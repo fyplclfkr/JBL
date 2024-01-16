@@ -11,20 +11,21 @@ from PyQt5.QtWidgets import QApplication
 app = QApplication(sys.argv)
 app.setAttribute(Qt.AA_DontCreateNativeWidgetSiblings)
 
-#启动CgTeamWork
+
 def is_process_running(process_name):
         for process in psutil.process_iter(['pid', 'name']):
             if process.info['name'] == process_name:
                 return True
         return False
-    
+
+#启动CgTeamWork    
 if is_process_running("CgTeamWork.exe"):
     from View.main_window import MainWindow
     w = MainWindow()
     w.show()
 else:
     try:
-        subprocess.Popen([r'C:\CgTeamWork_v7\bin\cgtw\CgTeamWork.exe'])  # 替换成你的软件路径
+        subprocess.Popen([r'C:\CgTeamWork_v7\bin\cgtw\CgTeamWork.exe'])
         from View.main_window import MainWindow
         w = MainWindow()
         w.show()
