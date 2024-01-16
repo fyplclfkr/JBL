@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QWidget, QApplication
 from qfluentwidgets import FluentWindow, ScrollArea, SplashScreen
 from qfluentwidgets import FluentIcon as FIF
 
-from ..timelog_interface.timelog_interface import TimeLogInterface
+from View.timelog_interface import TimeLogInterface
 
 
 class MainWindow(FluentWindow):
