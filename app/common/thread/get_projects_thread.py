@@ -2,7 +2,7 @@
 
 from PyQt5.QtCore import QThread, pyqtSignal
 
-from Core.cgtwapi import get_project
+from common.cgtwapi import get_project
 
 
 class GetProjectsThread(QThread):

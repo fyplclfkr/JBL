@@ -1,7 +1,7 @@
 # coding: utf-8
 from PyQt5.QtCore import QThread, pyqtSignal
 
-from Core.cgtwapi import get_daily_timelog
+from common.cgtwapi import get_daily_timelog
 
 class GetDailyTimelogThread(QThread):
     getTimelogFinished = pyqtSignal(list)

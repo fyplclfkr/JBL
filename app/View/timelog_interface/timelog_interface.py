@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QListWidgetItem , QAbstractSc
 
 from ..UI.timelog import Ui_TimeLog
 
-from Core.cgtwapi import get_project, get_my_task, get_daily_timelog
+from common.cgtwapi import get_project, get_my_task, get_daily_timelog
 
 from common.thread.get_projects_thread import GetProjectsThread
 from common.thread.get_tasks_thread import GetTasksThread
