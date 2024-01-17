@@ -94,6 +94,10 @@ class TimeLogInterface(QWidget, Ui_TimeLog):
 
     def set_timelog(self):
         pass
+    
+    def init_submitted_timelog(self):
+        self.SegmentedWidget
+        pass
 
         
     
